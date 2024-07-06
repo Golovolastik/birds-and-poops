@@ -1,9 +1,9 @@
 import React from 'react';
 import './ClaimButton.css'
 
-const ClaimButton = () => {
+const ClaimButton = (props) => {
     return (
-        <button className={'claim-button'}>
+        <button {...props} className={'claim-button'}>
             Claim
         </button>
     );
