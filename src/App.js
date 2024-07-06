@@ -7,7 +7,7 @@ import FooterMenu from "./components/FooterMenu/FooterMenu";
 import {useTelegram} from "./hooks/useTelegram";
 
 function App() {
-    const {tg, onClose} = useTelegram();
+    // const {tg, onClose} = useTelegram();
   return (
     <div className="App">
         <Header/>
