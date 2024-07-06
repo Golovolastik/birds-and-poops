@@ -13,6 +13,7 @@ function App() {
         <Points/>
         <TimerBar initialTime={60}/>
         <ClaimButton/>
+        <span>hello</span>
         <FooterMenu/>
     </div>
   );
