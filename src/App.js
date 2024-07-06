@@ -13,7 +13,7 @@ function App() {
         <Header/>
         <Points/>
         <TimerBar initialTime={60}/>
-        <ClaimButton onClick={tg.sendData('hello')}/>
+        <ClaimButton onClick={tg.sendData('hello')}></ClaimButton>
         <FooterMenu/>
     </div>
   );
