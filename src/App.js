@@ -7,13 +7,13 @@ import FooterMenu from "./components/FooterMenu/FooterMenu";
 import {useTelegram} from "./hooks/useTelegram";
 
 function App() {
-    const tg = useTelegram();
+    const {tg, onClose} = useTelegram();
   return (
     <div className="App">
         <Header/>
         <Points/>
         <TimerBar initialTime={60}/>
-        <ClaimButton onClick={tg.sendData('hello')}></ClaimButton>
+        <ClaimButton onClick={onClose}></ClaimButton>
         <FooterMenu/>
     </div>
   );
