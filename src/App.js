@@ -4,14 +4,17 @@ import TimerBar from "./components/TimerBar/TimerBar";
 import Points from "./components/Points/Points";
 import ClaimButton from "./components/ClaimButton/ClaimButton";
 import FooterMenu from "./components/FooterMenu/FooterMenu";
+import {useTelegram} from "./hooks/useTelegram";
 
 function App() {
-  return (
+    const {tg, user} = useTelegram();
+    return (
     <div className="App">
         <Header/>
         <Points/>
         <TimerBar initialTime={60}/>
         <ClaimButton/>
+        <span>{user?.username}</span>
         <FooterMenu/>
     </div>
   );
