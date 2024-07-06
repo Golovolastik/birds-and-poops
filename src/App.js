@@ -1,4 +1,5 @@
 import './App.css';
+import {useEffect} from "react";
 import Header from "./components/Header/Header";
 import TimerBar from "./components/TimerBar/TimerBar";
 import Points from "./components/Points/Points";
@@ -8,6 +9,11 @@ import {useTelegram} from "./hooks/useTelegram";
 
 function App() {
     const {tg, user} = useTelegram();
+
+    useEffect(() => {
+        tg.ready();
+    }, []);
+
     return (
     <div className="App">
         <Header/>
