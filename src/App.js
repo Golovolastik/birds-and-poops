@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header/Header";
+import TimerBar from "./components/TimerBar/TimerBar";
+import Points from "./components/Points/Points";
+import ClaimButton from "./components/ClaimButton/ClaimButton";
+import FooterMenu from "./components/FooterMenu/FooterMenu";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header/>
+        <Points/>
+        <TimerBar initialTime={60}/>
+        <ClaimButton/>
+        <FooterMenu/>
     </div>
   );
 }
