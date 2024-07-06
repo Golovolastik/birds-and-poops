@@ -4,10 +4,8 @@ import TimerBar from "./components/TimerBar/TimerBar";
 import Points from "./components/Points/Points";
 import ClaimButton from "./components/ClaimButton/ClaimButton";
 import FooterMenu from "./components/FooterMenu/FooterMenu";
-import {useTelegram} from "./hooks/useTelegram";
 
 function App() {
-    // const {tg, onClose} = useTelegram();
   return (
     <div className="App">
         <Header/>
