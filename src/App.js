@@ -8,11 +8,6 @@ import FooterMenu from "./components/FooterMenu/FooterMenu";
 import {useTelegram} from "./hooks/useTelegram";
 
 function App() {
-    const {tg, user} = useTelegram();
-
-    useEffect(() => {
-        tg.ready();
-    }, []);
 
     return (
     <div className="App">
