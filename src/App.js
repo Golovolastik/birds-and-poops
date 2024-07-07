@@ -9,6 +9,7 @@ import {useTelegram} from "./hooks/useTelegram";
 
 function App() {
     const tg = useTelegram();
+    console.log(tg);
     return (
     <div className="App">
         <Header/>
