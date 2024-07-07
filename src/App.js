@@ -16,7 +16,6 @@ function App() {
         <Points/>
         <TimerBar initialTime={60}/>
         <ClaimButton/>
-        {/*<div>{user?.username}</div>*/}
         <FooterMenu/>
     </div>
   );
