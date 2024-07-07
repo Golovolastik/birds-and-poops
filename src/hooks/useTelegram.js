@@ -1,9 +1,8 @@
 
 
-const tg = window.Telegram.WebApp;
+const tg = 'hello';
 
 export function useTelegram() {
-
     return {
 
         tg,
