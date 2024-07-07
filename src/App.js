@@ -7,7 +7,6 @@ import FooterMenu from "./components/FooterMenu/FooterMenu";
 
 
 function App() {
-    const {tg} = useTelegram();
 
     return (
     <div className="App">
