@@ -8,7 +8,7 @@ import {useTelegram} from "./hooks/useTelegram";
 
 
 function App() {
-    const {tg, user} = useTelegram();
+    const {tg} = useTelegram();
 
     return (
     <div className="App">
