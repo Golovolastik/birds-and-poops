@@ -1,10 +1,9 @@
-
-
-const tg = 'hello';
+const tg = window.Telegram.WebApp;
 
 export function useTelegram() {
-    return {
 
+    return {
         tg,
+        user: tg.initDataUnsafe?.user,
     }
 }

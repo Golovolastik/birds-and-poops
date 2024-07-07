@@ -8,17 +8,20 @@ import {useTelegram} from "./hooks/useTelegram";
 
 
 function App() {
-    const tg = useTelegram();
+    const {tg, user} = useTelegram();
     console.log(tg);
     return (
-    <div className="App">
-        <Header/>
-        <Points/>
-        <TimerBar initialTime={60}/>
-        <ClaimButton/>
-        <FooterMenu/>
-    </div>
-  );
+        <div className="App">
+            <Header/>
+            <Points/>
+            <TimerBar initialTime={60}/>
+            <span className={'username'}>
+                {user?.username}
+            </span>
+            <ClaimButton/>
+            <FooterMenu/>
+        </div>
+    );
 }
 
 export default App;
