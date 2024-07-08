@@ -11,7 +11,7 @@ function App() {
     const {tg, user} = useTelegram();
     console.log(tg);
     const handleClick = async () => {
-        const response = await fetch('http://localhost:3000/hello');
+        const response = await fetch('http://localhost:3456/hello');
         const text = await response.text();
         console.log(text);
     };
