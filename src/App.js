@@ -10,6 +10,11 @@ import {useTelegram} from "./hooks/useTelegram";
 function App() {
     const {tg, user} = useTelegram();
     console.log(tg);
+    const handleClick = async () => {
+        const response = await fetch('http://localhost:3000/hello');
+        const text = await response.text();
+        console.log(text);
+    };
     return (
         <div className="App">
             <Header/>
@@ -18,7 +23,7 @@ function App() {
             <span className={'userId'}>
                 {user?.id}
             </span>
-            <ClaimButton/>
+            <ClaimButton onClick={handleClick}/>
             <FooterMenu/>
         </div>
     );
