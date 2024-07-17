@@ -11,7 +11,7 @@ function App() {
     const {tg, user} = useTelegram();
     console.log(tg);
     const handleClick = async () => {
-        const response = await fetch('https://178.20.46.44:3456/hello', {
+        const response = await fetch('https://178.20.46.44:3000/hello', {
             headers: {
                 user: user?.id,
             }
