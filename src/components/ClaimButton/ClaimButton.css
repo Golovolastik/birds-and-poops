@@ -24,4 +24,5 @@
 
 .claim-button:focus {
     outline: 2px solid lighten(var(--tg-theme-button-color), 30%); /* Добавляем светлую границу при фокусе */
-    outline-
+    outline-offset: 2px;
+}
