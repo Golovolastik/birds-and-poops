@@ -13,3 +13,15 @@
     cursor: pointer;
     width: 300px;
 }
+.claim-button:hover {
+    background: darken(var(--tg-theme-button-color), 10%); /* Уменьшаем яркость фона на 10% при наведении */
+}
+
+.claim-button:active {
+    background: darken(var(--tg-theme-button-color), 20%); /* Уменьшаем яркость фона на 20% при нажатии */
+    transform: scale(0.98); /* Уменьшаем размер кнопки на 2% для эффекта нажатия */
+}
+
+.claim-button:focus {
+    outline: 2px solid lighten(var(--tg-theme-button-color), 30%); /* Добавляем светлую границу при фокусе */
+    outline-
