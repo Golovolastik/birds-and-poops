@@ -25,7 +25,7 @@ function App() {
             <Points/>
             <TimerBar initialTime={60}/>
             <span className={'userId'}>
-                {user?.username}
+                Hi! {user?.username}
             </span>
             <ClaimButton onClick={handleClick}/>
             <FooterMenu/>
