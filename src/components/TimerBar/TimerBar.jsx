@@ -19,8 +19,7 @@ const TimerBar = ({ setStatus }) => {
                     setTimerStatus('Running');
                 } else {
                     setTime(0);
-                    setTimerStatus(timeDiff.toString);
-                    //setTimerStatus('Ready to claim');
+                    setTimerStatus('Ready to claim');
                 }
             })
             .catch(error => {
