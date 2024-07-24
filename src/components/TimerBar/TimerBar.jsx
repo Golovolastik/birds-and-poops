@@ -11,7 +11,7 @@ const TimerBar = ({ setStatus }) => {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                const lastClaimTime = new Date(data.data);
+                const lastClaimTime = data.data.toString();
                 const currentTime = new Date();
                 const timeDiff = (currentTime - lastClaimTime) / 1000;
 
@@ -20,7 +20,7 @@ const TimerBar = ({ setStatus }) => {
                     setTimerStatus('Running');
                 } else {
                     setTime(0);
-                    setTimerStatus(lastClaimTime.toString);
+                    setTimerStatus(lastClaimTime);
                 }
             })
             .catch(error => {
