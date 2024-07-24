@@ -6,7 +6,7 @@ const TimerBar = ({ setStatus }) => {
     const [timerStatus, setTimerStatus] = useState('Loading...');
 
     useEffect(() => {
-        fetch('/api/last-claim-time')
+        fetch('https://potty-pals.fun/api/last-claim-time')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
