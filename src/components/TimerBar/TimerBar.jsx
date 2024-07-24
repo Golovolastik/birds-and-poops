@@ -4,6 +4,7 @@ import './TimerBar.css';
 const TimerBar = ({ setStatus }) => {
     const [time, setTime] = useState(null);
     const [timerStatus, setTimerStatus] = useState('Loading...');
+    console.log(timerStatus);
 
     useEffect(() => {
         fetch('https://potty-pals.fun/api/last-claim-time')
