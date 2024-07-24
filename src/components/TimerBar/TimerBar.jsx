@@ -4,10 +4,10 @@ import './TimerBar.css';
 const TimerBar = ({ setStatus }) => {
     const [time, setTime] = useState(null);
     const [timerStatus, setTimerStatus] = useState('Loading...');
+    console.log('Timer Status:');
     console.log(timerStatus);
-
-    useEffect(() => {
-        fetch('https://potty-pals.fun/api/last-claim-time')
+    useEffect(async () => {
+        await fetch('https://potty-pals.fun/api/last-claim-time')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
