@@ -6,8 +6,8 @@ const TimerBar = ({ setStatus }) => {
     const [timerStatus, setTimerStatus] = useState('Loading...');
     console.log('Timer Status:');
     console.log(timerStatus);
-    useEffect(async () => {
-        await fetch('https://potty-pals.fun/api/last-claim-time')
+    useEffect( () => {
+        fetch('https://potty-pals.fun/api/last-claim-time')
             .then(response => response.json())
             .then(data => {
                 console.log(data);
