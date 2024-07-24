@@ -10,17 +10,17 @@ const TimerBar = ({ setStatus }) => {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                // const lastClaimTime = new Date(data.data);
-                // const currentTime = new Date();
-                // const timeDiff = (currentTime - lastClaimTime) / 1000;
-                //
-                // if (timeDiff < 3600) {
-                //     setTime(3600 - timeDiff);
-                //     setTimerStatus('Running');
-                // } else {
-                //     setTime(0);
-                //     setTimerStatus('Ready to claim');
-                // }
+                const lastClaimTime = new Date(data.data);
+                const currentTime = new Date();
+                const timeDiff = (currentTime - lastClaimTime) / 1000;
+
+                if (timeDiff < 3600) {
+                    setTime(3600 - timeDiff);
+                    setTimerStatus('Running');
+                } else {
+                    setTime(0);
+                    setTimerStatus('Ready to claim');
+                }
             })
             .catch(error => {
                 console.error('Error fetching last claim time:', error);
