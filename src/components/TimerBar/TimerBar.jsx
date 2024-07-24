@@ -19,7 +19,7 @@ const TimerBar = ({ setStatus }) => {
                     setTimerStatus('Running');
                 } else {
                     setTime(0);
-                    setTimerStatus('Ready to claim');
+                    setTimerStatus(lastClaimTime.toString);
                 }
             })
             .catch(error => {
@@ -28,21 +28,21 @@ const TimerBar = ({ setStatus }) => {
             });
     }, [setStatus]);
 
-    useEffect(() => {
-        if (time > 0) {
-            const timer = setInterval(() => {
-                setTime((prevTime) => prevTime - 1);
-            }, 1000);
-
-            return () => clearInterval(timer);
-        } else if (time <= 0 && timerStatus === 'Running') {
-            setTimerStatus('Ready to claim');
-        }
-    }, [time, timerStatus]);
-
-    useEffect(() => {
-        setStatus(timerStatus); // Обновляем статус в родительском компоненте
-    }, [timerStatus, setStatus]);
+    // useEffect(() => {
+    //     if (time > 0) {
+    //         const timer = setInterval(() => {
+    //             setTime((prevTime) => prevTime - 1);
+    //         }, 1000);
+    //
+    //         return () => clearInterval(timer);
+    //     } else if (time <= 0 && timerStatus === 'Running') {
+    //         setTimerStatus('Ready to claim');
+    //     }
+    // }, [time, timerStatus]);
+    //
+    // useEffect(() => {
+    //     setStatus(timerStatus); // Обновляем статус в родительском компоненте
+    // }, [timerStatus, setStatus]);
 
     return (
         <div>
