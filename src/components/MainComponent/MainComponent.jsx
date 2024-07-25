@@ -27,7 +27,6 @@ const MainComponent = () => {
 
     return (
         <div className={'container'}>
-            <div className={'status'}>{status}</div>
             <TimerBar setStatus={setStatus} />
             <ClaimButton status={status} onClick={handleButtonClick} />
         </div>
