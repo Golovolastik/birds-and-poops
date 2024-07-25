@@ -16,9 +16,6 @@ const TimerBar = ({ setStatus }) => {
                 });
                 const data = await response.json();
                 const timeToClaim = Date.now() - Date.parse(data.data);
-                if (timeToClaim > 3600)
-                const minutes = timeToClaim.minute();
-                const seconds = timeToClaim.second();
                 setTimer(timeToClaim.toString());
             } catch (error) {
                 console.error('Error fetching time: ', error);
