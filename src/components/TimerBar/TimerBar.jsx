@@ -1,58 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import './TimerBar.css';
+import {useTelegram} from "../../hooks/useTelegram";
 
 const TimerBar = ({ setStatus }) => {
-    const [time, setTime] = useState(null);
-    const [timerStatus, setTimerStatus] = useState('Loading...');
-    console.log('Timer Status:');
-    console.log(timerStatus);
+    const { user } = useTelegram();
+    const [timer, setTimer] = useState('Loading');
+
     useEffect( () => {
-        fetch('https://potty-pals.fun/api/last-claim-time')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                const lastClaimTime = data.data.toString();
-                const currentTime = new Date();
-                const timeDiff = (currentTime - lastClaimTime) / 1000;
-
-                if (timeDiff < 3600) {
-                    setTime(3600 - timeDiff);
-                    setTimerStatus('Running');
-                } else {
-                    setTime(0);
-                    setTimerStatus(lastClaimTime);
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching last claim time:', error);
-                setTimerStatus('Error');
-            });
-    }, [setStatus]);
-
-    // useEffect(() => {
-    //     if (time > 0) {
-    //         const timer = setInterval(() => {
-    //             setTime((prevTime) => prevTime - 1);
-    //         }, 1000);
-    //
-    //         return () => clearInterval(timer);
-    //     } else if (time <= 0 && timerStatus === 'Running') {
-    //         setTimerStatus('Ready to claim');
-    //     }
-    // }, [time, timerStatus]);
-    //
-    // useEffect(() => {
-    //     setStatus(timerStatus); // Обновляем статус в родительском компоненте
-    // }, [timerStatus, setStatus]);
+        const fetchTimer = async () => {
+            try {
+                const response = await fetch('https://potty-pals.fun/api/last-claim-time', {
+                    headers: {
+                        user: user?.id,
+                    }
+                });
+                const data = await response.json();
+                setTimer(data.data);
+            } catch (error) {
+                console.error('Error fetching time: ', error);
+            }
+        }
+        if (user?.id) {
+            fetchTimer();
+        }
+    }, [user]);
 
     return (
-        <div>
-            {time > 0 ? (
-                <div className={'timer'}>{Math.floor(time / 60)} minutes {Math.floor(time % 60)} seconds remaining</div>
-            ) : (
-                <div className={'timer'}>Ready to claim</div>
-            )}
+        <div className={'timer'}>
+            {timer}
         </div>
+        // <div>
+        //     {time > 0 ? (
+        //         <div className={'timer'}>{Math.floor(time / 60)} minutes {Math.floor(time % 60)} seconds remaining</div>
+        //     ) : (
+        //         <div className={'timer'}>Ready to claim</div>
+        //     )}
+        // </div>
     );
 };
 
