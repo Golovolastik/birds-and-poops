@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import TimerBar from "../TimerBar/TimerBar";
 import ClaimButton from '../ClaimButton/ClaimButton';
 import {useTelegram} from "../../hooks/useTelegram";
 
 const MainComponent = () => {
-    const [status, setStatus] = useState('Loading...');
     const {user} = useTelegram();
     const handleButtonClick = async () => { // Добавляем async
         try {
@@ -27,8 +26,8 @@ const MainComponent = () => {
 
     return (
         <div className={'container'}>
-            <TimerBar setStatus={setStatus} />
-            <ClaimButton status={status} onClick={handleButtonClick} />
+            <TimerBar />
+            <ClaimButton onClick={handleButtonClick} />
         </div>
     );
 };
