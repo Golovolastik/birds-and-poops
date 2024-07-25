@@ -14,8 +14,9 @@ const TimerBar = ({ setStatus }) => {
                         user: user?.id,
                     }
                 });
-                //const data = await response.json();
-                //const timeToClaim = Date.now() - Date.parse(data.data);
+                const data = await response.json();
+                const timeToClaim = Date.now() - Date.parse(data.data);
+                console.log(timeToClaim);
                 setTimer(Date.now().toString());
             } catch (error) {
                 console.error('Error fetching time: ', error);
