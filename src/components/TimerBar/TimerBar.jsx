@@ -23,7 +23,7 @@ const TimerBar = ({ setStatus }) => {
                 if (hours > 8) {
                     setTimer('Ready');
                 } else {
-                    let timer = (8-hours) + ':' + (60-minutes) + ':' + (60-seconds);
+                    let timer = (7-hours) + ':' + (60-minutes) + ':' + (60-seconds);
                     setTimer(timer);
                 }
             } catch (error) {
