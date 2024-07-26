@@ -22,14 +22,14 @@ const TimerBar = ({ setStatus }) => {
                     const hours = Math.floor((timeFromClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 3;
                     const minutes = Math.floor((timeFromClaim % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeFromClaim % (1000 * 60)) / 1000);
-                    if (hours > 8) {
+                    if (hours >= 8) {
                         setTimer('Ready');
                         clearInterval(timerFunction);
                     } else {
                         let timer = (7-hours) + ':' + (59-minutes) + ':' + (59-seconds);
                         setTimer(timer);
                     }
-                }, 50_000);
+                }, 1000);
 
             } catch (error) {
                 console.error('Error fetching time: ', error);
