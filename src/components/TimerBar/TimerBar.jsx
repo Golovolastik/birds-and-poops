@@ -15,13 +15,17 @@ const TimerBar = ({ setStatus }) => {
                     }
                 });
                 const data = await response.json();
-                const timeToClaim = new Date().getTime() - Date.parse(data.data);
-                const hours = Math.floor((timeToClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 3;
-                const minutes = Math.floor((timeToClaim % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeToClaim % (1000 * 60)) / 1000);
-                let timer = hours + 'h ' + minutes + 'm ' + seconds + 's';
-                console.log(timeToClaim);
-                setTimer(timer);
+                const timeFromClaim = new Date().getTime() - Date.parse(data.data);
+                const hours = Math.floor((timeFromClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 3;
+                const minutes = Math.floor((timeFromClaim % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeFromClaim % (1000 * 60)) / 1000);
+                console.log(timeFromClaim);
+                if (hours > 8) {
+                    setTimer('Ready');
+                } else {
+                    let timer = (8-hours) + ':' + (60-minutes) + ':' + (60-seconds);
+                    setTimer(timer);
+                }
             } catch (error) {
                 console.error('Error fetching time: ', error);
             }
