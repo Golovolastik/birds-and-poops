@@ -16,7 +16,7 @@ const TimerBar = ({ setStatus }) => {
                 });
                 const data = await response.json();
                 const timeToClaim = new Date().getTime() - Date.parse(data.data);
-                const hours = Math.floor((timeToClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const hours = Math.floor((timeToClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 3;
                 const minutes = Math.floor((timeToClaim % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeToClaim % (1000 * 60)) / 1000);
                 let timer = hours + 'h ' + minutes + 'm ' + seconds + 's';
