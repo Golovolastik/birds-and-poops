@@ -14,18 +14,23 @@ const TimerBar = ({ setStatus }) => {
                         user: user?.id,
                     }
                 });
+
                 const data = await response.json();
-                const timeFromClaim = new Date().getTime() - Date.parse(data.data);
-                const hours = Math.floor((timeFromClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 3;
-                const minutes = Math.floor((timeFromClaim % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeFromClaim % (1000 * 60)) / 1000);
-                console.log(timeFromClaim);
-                if (hours > 8) {
-                    setTimer('Ready');
-                } else {
-                    let timer = (7-hours) + ':' + (59-minutes) + ':' + (59-seconds);
-                    setTimer(timer);
-                }
+                const timerFunction = setInterval(function () {
+                    const now = Date().getTime();
+                    const timeFromClaim = new Date().getTime() - Date.parse(data.data);
+                    const hours = Math.floor((timeFromClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 3;
+                    const minutes = Math.floor((timeFromClaim % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeFromClaim % (1000 * 60)) / 1000);
+                    if (hours > 8) {
+                        setTimer('Ready');
+                        clearInterval(timerFunction);
+                    } else {
+                        let timer = (7-hours) + ':' + (59-minutes) + ':' + (59-seconds);
+                        setTimer(timer);
+                    }
+                }, 50_000);
+
             } catch (error) {
                 console.error('Error fetching time: ', error);
             }
