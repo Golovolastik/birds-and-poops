@@ -17,12 +17,14 @@ const TimerBar = ({ setStatus }) => {
 
                 const data = await response.json();
                 const lastClaimTime = Date.parse(data.data);
+                setStatus('Running');
                 const timerFunction = setInterval(function () {
                     const timeFromClaim = new Date().getTime() - lastClaimTime;
                     const hours = Math.floor((timeFromClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 3;
                     const minutes = Math.floor((timeFromClaim % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeFromClaim % (1000 * 60)) / 1000);
                     if (hours >= 8) {
+                        setStatus('Ready');
                         setTimer('Ready');
                         clearInterval(timerFunction);
                     } else {
