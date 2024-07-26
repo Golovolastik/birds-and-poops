@@ -3,7 +3,7 @@ import './TimerBar.css';
 import {useTelegram} from "../../hooks/useTelegram";
 
 const TimerBar = ({ setStatus }) => {
-    const {user} = useTelegram();
+    const { user } = useTelegram();
     const [timer, setTimer] = useState('Loading');
 
     useEffect(() => {
@@ -49,5 +49,11 @@ const TimerBar = ({ setStatus }) => {
         return () => clearInterval(timerFunction);
 
     }, [user, setStatus]);
-}
+
+    return (
+        <div>
+            {timer}
+        </div>
+    );
+};
 export default TimerBar;
