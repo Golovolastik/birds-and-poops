@@ -40,7 +40,7 @@ const TimerBar = ({ setStatus }) => {
         if (user?.id) {
             fetchTimer();
         }
-    }, [user]);
+    }, [user, setStatus]);
 
     return (
         <div className={'timer'}>
