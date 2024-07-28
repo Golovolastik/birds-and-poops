@@ -19,7 +19,6 @@ const TimerBar = ({ onTimerEnd }) => {
 
                 const data = await response.json();
                 const lastClaimTime = Date.parse(data.data);
-                setStatus('Running');
 
                 timerFunction = setInterval(() => {
                     const timeFromClaim = new Date().getTime() - lastClaimTime;
