@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './TimerBar.css';
 import {useTelegram} from "../../hooks/useTelegram";
 
-const TimerBar = ({ setStatus }) => {
+const TimerBar = ({ onTimerEnd }) => {
     const { user } = useTelegram();
     const [timer, setTimer] = useState('Loading');
 
@@ -48,7 +48,7 @@ const TimerBar = ({ setStatus }) => {
         // Cleanup interval on component unmount or user change
         return () => clearInterval(timerFunction);
 
-    }, [user, setStatus]);
+    }, [user, onTimerEnd]);
 
     return (
         <div>

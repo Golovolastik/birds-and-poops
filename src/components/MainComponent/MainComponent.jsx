@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TimerBar from "../TimerBar/TimerBar";
 import ClaimButton from '../ClaimButton/ClaimButton';
 import {useTelegram} from "../../hooks/useTelegram";
 
 const MainComponent = () => {
     const {user} = useTelegram();
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
     const handleButtonClick = async () => { // Добавляем async
         try {
             const response = await fetch('https://potty-pals.fun/api/claim', {
@@ -24,10 +25,14 @@ const MainComponent = () => {
         }
     };
 
+    const handleTimerEnd = () => {
+        setIsButtonDisabled(false);
+    };
+
     return (
         <div className={'container'}>
-            <TimerBar />
-            <ClaimButton onClick={handleButtonClick} />
+            <TimerBar onTimerEnd={handleTimerEnd}/>
+            <ClaimButton onClick={handleButtonClick} isDisabled={isButtonDisabled} />
         </div>
     );
 };

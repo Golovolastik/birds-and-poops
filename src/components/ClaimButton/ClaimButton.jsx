@@ -1,13 +1,13 @@
 import React from 'react';
 import './ClaimButton.css';
 
-const ClaimButton = ({ status, onClick }) => (
+const ClaimButton = ({ onClick, isDisabled }) => (
     <button
         onClick={onClick}
-        disabled={status === 'Running' || status === 'Loading...'}
-        className={'claim-button'}
+        className={`claim-button ${isDisabled ? 'disabled' : ''}`}
+        disabled={isDisabled}
     >
-        Claim
+        {isDisabled ? 'Please wait' : 'Claim Now'}
     </button>
 );
 
