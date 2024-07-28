@@ -5,7 +5,7 @@ import {useTelegram} from "../../hooks/useTelegram";
 
 const MainComponent = () => {
     const {user} = useTelegram();
-    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
     const handleButtonClick = async () => { // Добавляем async
         try {
             const response = await fetch('https://potty-pals.fun/api/claim', {
