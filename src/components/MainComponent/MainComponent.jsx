@@ -8,6 +8,7 @@ import './MainComponent.css'; // Подключаем стили
 const MainComponent = () => {
     const {user} = useTelegram();
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+    const [timerKey, setTimerKey] = useState(0);
     const handleButtonClick = async () => { // Добавляем async
         try {
             const response = await fetch('https://potty-pals.fun/api/claim', {
@@ -18,6 +19,8 @@ const MainComponent = () => {
 
             if (response.ok) {
                 console.log('Claim successful');
+                setIsButtonDisabled(true);
+                setTimerKey(prevKey => prevKey + 1);
                 // Дополнительная логика при успешном выполнении
             } else {
                 console.error('Failed to claim');
