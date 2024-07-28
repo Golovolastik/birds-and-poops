@@ -24,7 +24,8 @@ const TimerBar = ({ onTimerEnd }) => {
                 const lastClaimTime = Date.parse(data.data);
 
                 timerFunction = setInterval(() => {
-                    const timeFromClaim = new Date().getTime() - lastClaimTime;
+                    const now = new Date();
+                    const timeFromClaim = now - new Date(lastClaimTime);
                     const hours = Math.floor((timeFromClaim % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) - 3;
                     const minutes = Math.floor((timeFromClaim % (1000 * 60 * 60)) / (1000 * 60));
                     const seconds = Math.floor((timeFromClaim % (1000 * 60)) / 1000);
