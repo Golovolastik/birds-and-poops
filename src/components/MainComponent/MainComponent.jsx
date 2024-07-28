@@ -36,7 +36,7 @@ const MainComponent = () => {
 
     return (
         <div className={'container'}>
-            <TimerBar onTimerEnd={handleTimerEnd}/>
+            <TimerBar key={timerKey} onTimerEnd={handleTimerEnd}/>
             <ClaimButton onClick={handleButtonClick} isDisabled={isButtonDisabled} />
         </div>
     );
