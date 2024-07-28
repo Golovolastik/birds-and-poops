@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import './TimerBar.css';
-import {useTelegram} from "../../hooks/useTelegram";
+import React, { useEffect, useState } from 'react';
+import { useTelegram } from 'your-telegram-hook'; // Замените на фактический импорт
 
 const TimerBar = ({ onTimerEnd }) => {
     const { user } = useTelegram();
@@ -17,6 +16,10 @@ const TimerBar = ({ onTimerEnd }) => {
                     }
                 });
 
+                if (!response.ok) {
+                    throw new Error('Failed to fetch last claim time');
+                }
+
                 const data = await response.json();
                 const lastClaimTime = Date.parse(data.data);
 
@@ -29,6 +32,7 @@ const TimerBar = ({ onTimerEnd }) => {
                     if (hours >= 8) {
                         setTimer('Ready');
                         clearInterval(timerFunction);
+                        onTimerEnd();
                     } else {
                         const formattedTimer = `${7 - hours}:${59 - minutes}:${59 - seconds}`;
                         setTimer(formattedTimer);
@@ -36,6 +40,7 @@ const TimerBar = ({ onTimerEnd }) => {
                 }, 1000);
             } catch (error) {
                 console.error('Error fetching time: ', error);
+                setTimer('Error');
             }
         };
 
@@ -54,4 +59,5 @@ const TimerBar = ({ onTimerEnd }) => {
         </div>
     );
 };
+
 export default TimerBar;
