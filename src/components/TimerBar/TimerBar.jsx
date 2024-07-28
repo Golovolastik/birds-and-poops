@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useTelegram } from 'your-telegram-hook'; // Замените на фактический импорт
+import { useTelegram } from '../../hooks/useTelegram'
 
 const TimerBar = ({ onTimerEnd }) => {
     const { user } = useTelegram();
