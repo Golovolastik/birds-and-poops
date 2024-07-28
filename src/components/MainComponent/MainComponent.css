@@ -15,25 +15,3 @@
     font-size: 24px;
     color: #333;
 }
-
-.claim-button {
-    padding: 10px 15px;
-    background: orange;
-    color: whitesmoke;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    width: 300px;
-    transition: transform 0.2s, background 0.2s; /* Добавляем плавный переход для изменения фона */
-}
-
-.claim-button:active {
-    transform: scale(0.98); /* Уменьшаем размер кнопки на 2% для эффекта нажатия */
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-}
-
-.claim-button.disabled {
-    background: gray; /* Меняем фон на серый для неактивной кнопки */
-    cursor: not-allowed; /* Изменяем курсор на запрет */
-    pointer-events: none; /* Отключаем все события мыши */
-}
