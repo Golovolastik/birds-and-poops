@@ -54,7 +54,7 @@ const TimerBar = ({ onTimerEnd }) => {
     }, [user, onTimerEnd]);
 
     return (
-        <div>
+        <div className={'timer-bar'}>
             {timer}
         </div>
     );

@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import TimerBar from "../TimerBar/TimerBar";
 import ClaimButton from '../ClaimButton/ClaimButton';
 import {useTelegram} from "../../hooks/useTelegram";
+import './MainComponent.css'; // Подключаем стили
+
 
 const MainComponent = () => {
     const {user} = useTelegram();
