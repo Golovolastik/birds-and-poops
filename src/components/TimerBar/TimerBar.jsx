@@ -28,7 +28,6 @@ const TimerBar = ({ onTimerEnd }) => {
                     const seconds = Math.floor((timeFromClaim % (1000 * 60)) / 1000);
 
                     if (hours >= 8) {
-                        setStatus('Ready');
                         setTimer('Ready');
                         clearInterval(timerFunction);
                     } else {
