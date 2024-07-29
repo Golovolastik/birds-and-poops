@@ -6,8 +6,6 @@ import MainComponent from "./components/MainComponent/MainComponent";
 
 
 function App() {
-    const {tg, user} = useTelegram();
-    console.log(tg);
     return (
         <div className="App">
             <Header/>

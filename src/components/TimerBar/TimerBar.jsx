@@ -39,7 +39,7 @@ const TimerBar = ({ onTimerEnd, lastClaim }) => {
         // Cleanup interval on component unmount or user change
         return () => clearInterval(timerFunction);
 
-    }, [onTimerEnd]);
+    }, [lastClaim, onTimerEnd]);
 
     return (
         <div className={'timer-bar'}>
