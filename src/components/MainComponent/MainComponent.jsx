@@ -62,7 +62,7 @@ const MainComponent = () => {
 
     return (
         <div className={'container'}>
-            <Points user={user} points={points}/>
+            <Points points={points}/>
             <span className={'userId'}>
                 Hi! {user?.username}
             </span>
