@@ -45,6 +45,7 @@ const MainComponent = () => {
                 const data = await response.json();
                 setPoints(data.points);
                 setLastClaim(data.date);
+                console.log(points);
             } catch (error) {
                 console.error('Error fetching points:', error);
             }
@@ -62,7 +63,7 @@ const MainComponent = () => {
 
     return (
         <div className={'container'}>
-            <Points userPoints={points}/>
+            <Points points={points}/>
             <span className={'userId'}>
                 Hi! {user?.username}
             </span>
