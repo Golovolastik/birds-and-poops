@@ -54,7 +54,7 @@ const MainComponent = () => {
         if (user?.id) {
             fetchUserData();
         }
-    }, [user]);
+    }, [points, user]);
 
 
     const handleTimerEnd = () => {
