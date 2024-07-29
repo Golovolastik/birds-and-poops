@@ -1,7 +1,7 @@
 import React from 'react';
 import './Points.css';
 
-const Points = (points) => {
+const Points = ({points}) => {
     return (
         <div className="points">
             {points !== null ? (
