@@ -43,9 +43,9 @@ const MainComponent = () => {
                     }
                 });
                 const data = await response.json();
+                console.log(typeof data.points);
                 setPoints(data.points);
                 setLastClaim(data.date);
-                console.log(points);
             } catch (error) {
                 console.error('Error fetching points:', error);
             }
@@ -54,7 +54,7 @@ const MainComponent = () => {
         if (user?.id) {
             fetchUserData();
         }
-    }, [points, user]);
+    }, [user]);
 
 
     const handleTimerEnd = () => {
