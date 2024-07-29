@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTelegram } from '../../hooks/useTelegram'
 
-const TimerBar = ({ onTimerEnd }) => {
-    const { user } = useTelegram();
+const TimerBar = ({ onTimerEnd, lastClaim }) => {
     const [timer, setTimer] = useState('Loading');
 
     useEffect(() => {
@@ -10,18 +9,8 @@ const TimerBar = ({ onTimerEnd }) => {
 
         const fetchTimer = async () => {
             try {
-                const response = await fetch('https://potty-pals.fun/api/last-claim-time', {
-                    headers: {
-                        user: user?.id,
-                    }
-                });
 
-                if (!response.ok) {
-                    throw new Error('Failed to fetch last claim time');
-                }
-
-                const data = await response.json();
-                const lastClaimTime = Date.parse(data.data);
+                const lastClaimTime = Date.parse(lastClaim);
 
                 timerFunction = setInterval(() => {
                     const now = new Date();
@@ -46,10 +35,7 @@ const TimerBar = ({ onTimerEnd }) => {
                 setTimer('Error');
             }
         };
-
-        if (user?.id) {
-            fetchTimer();
-        }
+        fetchTimer();
 
         // Cleanup interval on component unmount or user change
         return () => clearInterval(timerFunction);

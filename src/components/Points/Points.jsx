@@ -1,31 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useTelegram } from '../../hooks/useTelegram';
+import React from 'react';
 import './Points.css';
 
-const Points = () => {
-    const { user } = useTelegram();
-    const [points, setPoints] = useState(null);
-
-    useEffect(() => {
-        const fetchPoints = async () => {
-            try {
-                const response = await fetch(`https://potty-pals.fun/api/points`, {
-                    headers: {
-                        user: user?.id,
-                    }
-                });
-                const data = await response.json();
-                setPoints(data.points);
-            } catch (error) {
-                console.error('Error fetching points:', error);
-            }
-        };
-
-        if (user?.id) {
-            fetchPoints();
-        }
-    }, [user]);
-
+const Points = (points) => {
     return (
         <div className="points">
             {points !== null ? (
