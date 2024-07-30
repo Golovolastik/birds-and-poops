@@ -22,9 +22,8 @@ const MainComponent = () => {
             });
 
             if (response.ok) {
-                console.log('Claim successful');
-                // const data = await response.json();
-                // setPoints(data.points);
+                const data = await response.json();
+                setPoints(data.points);
                 setIsButtonDisabled(true);
                 // Дополнительная логика при успешном выполнении
             } else {
