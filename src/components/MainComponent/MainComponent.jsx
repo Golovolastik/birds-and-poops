@@ -23,6 +23,7 @@ const MainComponent = () => {
 
             if (response.ok) {
                 console.log('Claim successful');
+                setPoints(data.points);
                 setIsButtonDisabled(true);
                 setTimerKey(prevKey => prevKey + 1);
                 // Дополнительная логика при успешном выполнении
@@ -62,7 +63,7 @@ const MainComponent = () => {
 
     return (
         <div className={'container'}>
-            <Points key={timerKey} points={points}/>
+            <Points points={points}/>
             <span className={'userId'}>
                 Hi! {user?.username}
             </span>
