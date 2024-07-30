@@ -26,7 +26,6 @@ const MainComponent = () => {
                 // const data = await response.json();
                 // setPoints(data.points);
                 setIsButtonDisabled(true);
-                setTimerKey(prevKey => prevKey + 1);
                 // Дополнительная логика при успешном выполнении
             } else {
                 console.error('Failed to claim');
@@ -68,7 +67,7 @@ const MainComponent = () => {
             <span className={'userId'}>
                 Hi! {user?.username}
             </span>
-            <TimerBar key={timerKey} onTimerEnd={handleTimerEnd} lastClaim={lastClaim}/>
+            <TimerBar onTimerEnd={handleTimerEnd} lastClaim={lastClaim}/>
             <ClaimButton onClick={handleButtonClick} isDisabled={isButtonDisabled} />
         </div>
     );
