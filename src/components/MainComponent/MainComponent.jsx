@@ -58,7 +58,8 @@ const MainComponent = () => {
     const handleTimerEnd = () => {
         setIsButtonDisabled(false);
     };
-
+    console.log('Points:', points);
+    console.log('LastClaim:', lastClaim);
     return (
         <div className={'container'}>
             <Points points={points}/>
