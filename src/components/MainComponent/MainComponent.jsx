@@ -45,8 +45,7 @@ const MainComponent = () => {
                     }
                 });
                 const data = await response.json();
-                console.log('points ' + data.points);
-                setPoints(666);
+                setPoints( data.points);
                 setLastClaim(data.date);
             } catch (error) {
                 console.error('Error fetching points:', error);
