@@ -10,7 +10,6 @@ import '../Points/Points.css';
 const MainComponent = () => {
     const {user} = useTelegram();
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-    const [timerKey, setTimerKey] = useState(0);
     const [lastClaim, setLastClaim] = useState(0);
     const [points, setPoints] = useState(0);
     const handleButtonClick = async () => { // Добавляем async
