@@ -25,6 +25,15 @@ const MainComponent = () => {
                 setPoints(data.points);
                 setIsButtonDisabled(true);
                 // Дополнительная логика при успешном выполнении
+                // Fetch the latest state data again to ensure component updates correctly
+                const updatedResponse = await fetch(`https://potty-pals.fun/api/get-state`, {
+                    headers: {
+                        user: user?.id,
+                    }
+                });
+                const updatedData = await updatedResponse.json();
+                setPoints(updatedData.points);
+                setLastClaim(updatedData.date);
             } else {
                 console.error('Failed to claim');
             }
