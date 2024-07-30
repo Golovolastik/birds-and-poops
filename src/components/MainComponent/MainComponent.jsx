@@ -23,8 +23,8 @@ const MainComponent = () => {
 
             if (response.ok) {
                 console.log('Claim successful');
-                // const data = await response.json();
-                // setPoints(data.points);
+                const data = await response.json();
+                setPoints(data.points);
                 setIsButtonDisabled(true);
                 setTimerKey(prevKey => prevKey + 1);
                 // Дополнительная логика при успешном выполнении
