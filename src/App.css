@@ -5,9 +5,24 @@
 
 .App {
   align-items: center;
+  --bg-image: url('./img/background-img.jpg');
+  --bg-image-opacity: 0.5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
   height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+.App::after {
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  content: '';
+  inset: 0;
+  opacity: var(--bg-image-opacity);
+  position: absolute;
+  z-index: -1;
 }
