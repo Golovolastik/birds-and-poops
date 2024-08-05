@@ -65,7 +65,7 @@ const MainComponent = () => {
     console.log('LastClaim:', lastClaim);
     return (
         <div className={'container'}>
-            <img src={birdImage} alt={'funny cartoon bird image'} className={'bird-img'}/>
+            <img src={birdImage} alt={'funny cartoon bird'} className={'bird-img'}/>
             <Points points={points}/>
             <span className={'userId'}>
                 Hi! {user?.username}
