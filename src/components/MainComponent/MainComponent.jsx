@@ -6,6 +6,9 @@ import './MainComponent.css';
 import Points from "../Points/Points";
 import '../Points/Points.css';
 
+import birdImage from '../../img/bird-img.png';
+
+
 
 const MainComponent = () => {
     const {user} = useTelegram();
@@ -62,6 +65,7 @@ const MainComponent = () => {
     console.log('LastClaim:', lastClaim);
     return (
         <div className={'container'}>
+            <img src={birdImage} alt={'funny cartoon bird image'} className={'bird-img'}/>
             <Points points={points}/>
             <span className={'userId'}>
                 Hi! {user?.username}

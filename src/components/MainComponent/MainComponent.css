@@ -10,6 +10,11 @@
     padding: 20px;
 }
 
+.bird-img {
+    height: auto;
+    width: 100%;
+}
+
 .timer-bar {
     margin-bottom: 20px;
     font-size: 24px;

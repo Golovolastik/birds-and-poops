@@ -1,6 +1,7 @@
 .claim-button {
     padding: 10px 15px;
-    background: orange;
+    background: #0098EA;
+    border-radius: 5px;
     color: whitesmoke;
     border: none;
     outline: none;
