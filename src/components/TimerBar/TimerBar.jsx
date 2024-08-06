@@ -24,9 +24,9 @@ const TimerBar = ({ onTimerEnd, lastClaim }) => {
                         onTimerEnd();
                     } else {
                         const formattedTimer =
-                            '${7 - hours}'.padStart(2, '0') + ':'
-                            + '${59 - minutes}'.padStart(2, '0') + ':'
-                            + '${59 - seconds}'.padStart(2, '0');
+                            `${7 - hours}`.padStart(2, '0') + ':'
+                            + `${59 - minutes}`.padStart(2, '0') + ':'
+                            + `${59 - seconds}`.padStart(2, '0');
                         setTimer(formattedTimer);
                     }
                 }, 1000);
