@@ -2,12 +2,14 @@
 
 .container {
     display: flex;
+    color: #0098EA;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 10vh;
     /*background-color: #f0f0f0;*/
     padding: 20px;
+    font-family: Arial;
 }
 
 .bird-img {
@@ -18,5 +20,4 @@
 .timer-bar {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
 }

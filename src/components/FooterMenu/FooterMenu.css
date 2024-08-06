@@ -1,11 +1,36 @@
 .footer-menu {
+    align-content: center;
+    color: #0098EA;
     display: flex;
     gap: 10px;
     justify-content: space-between;
     margin: 10px;
+    text-decoration: none;
     width: 90%;
 }
 
 .footer-menu div {
     padding: 10px;
+}
+
+.footer-link {
+    color: inherit;       /* Убирает цвет ссылки */
+    text-decoration: none; /* Убирает подчеркивание */
+    background-color: transparent; /* Убирает цвет фона */
+    padding: 10px;
+}
+
+/* Дополнительно можно сбросить стили для посещенных, активных и наведенных ссылок */
+.footer-link:visited {
+    color: inherit;
+}
+
+.footer-link:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-link:active {
+    color: inherit;
+    text-decoration: none;
 }
