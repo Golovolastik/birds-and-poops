@@ -43,7 +43,6 @@ const Tasks = () => {
                         <img src={task.icon_link} alt={task.name} className="task-icon" />
                         <div className="task-details">
                             <h3>{task.name}</h3>
-                            <p>Username: {task.channel_username}</p>
                             <p>Reward: {task.reward} points</p>
                             <a href={`https://${task.channel_link}`}>Go to Channel</a>
                         </div>
