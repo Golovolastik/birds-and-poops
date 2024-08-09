@@ -9,7 +9,7 @@ const Tasks = () => {
     useEffect(() => {
         const getTasks = async () => {
             try {
-                const response = await fetch('https://potty-pals.fun/api/get-tasks', {
+                const response = await fetch('https://potty-pals.fun/api/tasks/get-tasks', {
                     headers: {
                         user: user?.id,
                     }
