@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
+import './Tasks.css';
 
 const Tasks = () => {
     const { user } = useTelegram();
