@@ -45,7 +45,7 @@ const Tasks = () => {
                             <h3>{task.name}</h3>
                             <p>Username: {task.channel_username}</p>
                             <p>Reward: {task.reward} points</p>
-                            <a href={`https://${task.channel_link}`} target="_blank" rel="noopener noreferrer">Go to Channel</a>
+                            <a href={`https://${task.channel_link}`}>Go to Channel</a>
                         </div>
                     </div>
                 ))}
