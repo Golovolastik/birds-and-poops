@@ -5,33 +5,33 @@ const Tasks = () => {
     const { user } = useTelegram();
     const [tasks, setTasks] = useState([]);
 
-    const getTasks = async () => {
-        try {
-            const response = await fetch('https://potty-pals.fun/api/get-tasks', {
-                headers: {
-                    user: user?.id,
-                }
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                if (data.success) {
-                    setTasks(data.tasks); // Сохраняем задачи в состояние
-                } else {
-                    console.error('Failed to fetch tasks');
-                }
-            } else {
-                console.error('Failed to fetch');
-            }
-
-        } catch (e) {
-            console.error('Error fetching tasks:', e);
-        }
-    };
-
     useEffect(() => {
+        const getTasks = async () => {
+            try {
+                const response = await fetch('https://potty-pals.fun/api/get-tasks', {
+                    headers: {
+                        user: user?.id,
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success) {
+                        setTasks(data.tasks); // Сохраняем задачи в состояние
+                    } else {
+                        console.error('Failed to fetch tasks');
+                    }
+                } else {
+                    console.error('Failed to fetch');
+                }
+
+            } catch (e) {
+                console.error('Error fetching tasks:', e);
+            }
+        };
+
         getTasks(); // Загружаем задания при монтировании компонента
-    }, []);
+    }, [user]);
 
     return (
         <div>
