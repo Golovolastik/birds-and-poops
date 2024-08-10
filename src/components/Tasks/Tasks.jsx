@@ -36,11 +36,11 @@ const Tasks = () => {
 
     return (
         <div>
-            <h2>Tasks Page</h2>
+            <h2>Active tasks</h2>
             <div className="tasks-list">
                 {tasks.map(task => (
                     <div key={task.task_id} className="task-item">
-                        <img src={task.icon_link} alt={task.name} className="task-icon" />
+                        <img src={task.icon_link} alt={task.name} className="task-icon"/>
                         <div className="task-details">
                             <h3>{task.name}</h3>
                             <p>Reward: {task.reward} points</p>
@@ -49,7 +49,9 @@ const Tasks = () => {
                     </div>
                 ))}
             </div>
+            <h2>Archived tasks</h2>
         </div>
+
     );
 };
 
