@@ -13,11 +13,10 @@
   flex-direction: column;
   justify-content: space-between;
   /*gap: 20px;*/
-  min-height: 100vh;
+  height: 100%;
   /*position: absolute;*/
-  position: relative;
+  /*position: relative;*/
   /*isolation: isolate;*/
-  overflow: clip;
 }
 
 /*.App::after {*/
