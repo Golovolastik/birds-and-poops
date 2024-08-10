@@ -5,8 +5,9 @@
     background: antiquewhite;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     /*height: 50vh;*/
+    overflow: auto;
 }
 
 .task-item {
