@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 10px;
     height: 50vh;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .task-item {
