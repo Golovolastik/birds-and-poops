@@ -16,6 +16,7 @@
   height: 100vh;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 }
 
 /*.App::after {*/
