@@ -13,8 +13,8 @@
 }
 
 .bird-img {
-    height: 50vh;
-    width: auto;
+    max-height: 50vh;
+    max-width: 90vw;
 }
 
 .timer-bar {
