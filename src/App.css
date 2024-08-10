@@ -13,8 +13,9 @@
   flex-direction: column;
   justify-content: space-between;
   /*gap: 20px;*/
-  min-height: 100vh;
-  position: relative;
+  min-height: 100%;
+  position: absolute;
+  /*position: relative;*/
   /*isolation: isolate;*/
 }
 
