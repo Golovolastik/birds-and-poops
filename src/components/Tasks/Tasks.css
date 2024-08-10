@@ -1,9 +1,11 @@
+.container {
+    overflow: visible;
+}
 .tasks-list {
     background: antiquewhite;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    overflow: visible;
     /*height: 50vh;*/
 }
 

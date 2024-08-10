@@ -35,7 +35,7 @@ const Tasks = () => {
     }, [user]);
 
     return (
-        <div>
+        <div className={"container"}>
             <h2>Active tasks</h2>
             <div className="tasks-list">
                 {tasks.map(task => (
