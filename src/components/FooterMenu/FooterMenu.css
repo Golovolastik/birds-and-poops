@@ -7,6 +7,9 @@
     justify-content: space-between;
     margin-top: 10px;
     overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     text-decoration: none;
     width: 90%;
 }
