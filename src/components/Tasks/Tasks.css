@@ -1,5 +1,5 @@
 .container {
-    overflow: visible;
+    overflow: visible !important;
 }
 .tasks-list {
     background: antiquewhite;
@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    margin: 30px;
+    margin: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
