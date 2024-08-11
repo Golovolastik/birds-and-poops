@@ -2,7 +2,8 @@
     align-content: center;
     background: antiquewhite;
     color: #0098EA;
-    display: flex;
+    /*display: flex;*/
+    display: none;
     gap: 10px;
     justify-content: space-between;
     margin-top: 10px;
