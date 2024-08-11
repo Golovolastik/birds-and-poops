@@ -14,7 +14,7 @@ function App() {
                 <Route index element={<MainComponent />} />
                 <Route path="tasks" element={<Tasks />} />
             </Routes>
-            {/*<FooterMenu/>*/}
+            <FooterMenu/>
         </div>
     );
 }
