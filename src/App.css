@@ -2,7 +2,7 @@
   background: antiquewhite;
   margin: 0;
   padding: 0;
-  height: 90vh;
+  max-height: 90vh;
 }
 
 .App {

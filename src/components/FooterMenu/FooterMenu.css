@@ -7,9 +7,9 @@
     justify-content: space-between;
     margin-top: 10px;
     /*overflow: clip;*/
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
     text-decoration: none;
     width: 100%;
 }
