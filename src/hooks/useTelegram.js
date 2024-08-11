@@ -1,5 +1,5 @@
 const tg = window.Telegram.WebApp;
-tg.expand();
+// tg.expand();
 export function useTelegram() {
 
     return {
