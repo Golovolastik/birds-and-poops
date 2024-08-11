@@ -1,8 +1,7 @@
 /* MainComponent.css */
 
 .container {
-    /*display: flex;*/
-    display: none;
+    display: flex;
     color: #0098EA;
     flex-direction: column;
     align-items: center;
