@@ -1,5 +1,5 @@
 .container {
-    overflow: visible !important;
+    overflow: scroll;
 }
 .tasks-list {
     background: antiquewhite;
