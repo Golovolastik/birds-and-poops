@@ -1,13 +1,10 @@
-.container {
-    overflow: scroll;
-}
 .tasks-list {
     background: antiquewhite;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /*height: 50vh;*/
-    overflow: auto;
+    height: 30vh;
+    overflow: scroll;
 }
 
 .task-item {
