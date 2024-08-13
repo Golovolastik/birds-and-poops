@@ -3,9 +3,8 @@
     background: antiquewhite;
     color: #0098EA;
     display: flex;
-    gap: 10px;
     justify-content: space-between;
-    margin-top: 10px;
+    margin: 25px 0;
     /*overflow: clip;*/
     position: fixed;
     bottom: 0;
