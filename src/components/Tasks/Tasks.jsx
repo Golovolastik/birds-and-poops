@@ -49,7 +49,6 @@ const Tasks = () => {
                     </div>
                 ))}
             </div>
-            <h2>Archived tasks</h2>
         </div>
 
     );
