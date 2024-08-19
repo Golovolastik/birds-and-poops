@@ -7,7 +7,7 @@ const TaskButton = ({link}) => {
     const handleClick = () => {
         if (status === 'initial') {
             // Переход по ссылке
-            window.location.href = link;
+            window.location.href = `https://${link}`;
             setStatus('check');
         } else if (status === 'check') {
             // Отправка данных на бэкэнд
