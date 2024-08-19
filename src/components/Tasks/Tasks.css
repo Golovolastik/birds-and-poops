@@ -40,7 +40,9 @@
 }
 
 .task-details a {
-    background-color: #f9f9f9;
-    color: #0098EA;
+    background-color: #0098EA;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: antiquewhite;
     text-decoration: none;
 }
