@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTelegram } from '../../hooks/useTelegram';
 import './Tasks.css';
+import TaskButton from '../TaskButton/TaskButton';
 
 const Tasks = () => {
     const { user } = useTelegram();
@@ -44,7 +45,7 @@ const Tasks = () => {
                         <div className="task-details">
                             <h3>{task.name}</h3>
                             <p>Reward: {task.reward} points</p>
-                            <a href={`https://${task.channel_link}`}>Go to Channel</a>
+                            <TaskButton link={task.channel_link}/>
                         </div>
                     </div>
                 ))}
