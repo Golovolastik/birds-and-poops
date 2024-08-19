@@ -31,13 +31,16 @@
 .task-details h3 {
     margin: 0;
     font-size: 18px;
+    background-color: #f9f9f9;
 }
 
 .task-details p {
     margin: 5px 0;
+    background-color: #f9f9f9;
 }
 
 .task-details a {
-    color: blue;
-    text-decoration: underline;
+    background-color: #f9f9f9;
+    color: #0098EA;
+    text-decoration: none;
 }
