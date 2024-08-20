@@ -9,7 +9,7 @@ const TaskButton = ({link}) => {
         if (status === 'initial') {
             // Используем Telegram.WebApp.openLink для перехода по ссылке без подтверждения
             if (window.Telegram && window.Telegram.WebApp) {
-                window.Telegram.WebApp.openLink(link);
+                window.Telegram.WebApp.openTelegramLink(link);
             } else {
                 // Альтернативное поведение, если Telegram WebApp API недоступно
                 window.location.href = link;
