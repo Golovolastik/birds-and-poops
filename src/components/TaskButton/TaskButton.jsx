@@ -40,6 +40,7 @@ const TaskButton = ({link}) => {
 
     return (
         <button
+            className={'task-btn'}
             onClick={handleClick}
             disabled={status === 'disabled'}
             style={{ cursor: status === 'disabled' ? 'not-allowed' : 'pointer' }}
