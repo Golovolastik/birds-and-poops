@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import './TaskButton.css';
+import {useTelegram} from "../../hooks/useTelegram";
 
-const TaskButton = ({link}) => {
+const TaskButton = ({link, channelName}) => {
 
     const [status, setStatus] = useState('initial'); // 'initial', 'check', 'disabled'
-
+    const user = useTelegram();
     const handleClick = () => {
         if (status === 'initial') {
             // Используем Telegram.WebApp.openLink для перехода по ссылке без подтверждения
@@ -17,12 +18,15 @@ const TaskButton = ({link}) => {
             setStatus('check');
         } else if (status === 'check') {
             // Отправка данных на бэкэнд
-            fetch('https://your-backend-endpoint.com/api', {
+            fetch(`https://potty-pals.fun/api/task/check`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ someData: 'yourData' }),
+                body: JSON.stringify({
+                    user_id: `${user?.id}`,
+                    channel_name: `${channelName}`
+                }),
             })
                 .then(response => {
                     if (response.ok) {

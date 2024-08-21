@@ -45,7 +45,7 @@ const Tasks = () => {
                         <div className="task-details">
                             <h3>{task.name}</h3>
                             <p>Reward: {task.reward} points</p>
-                            <TaskButton link={`https://${task.channel_link}`}/>
+                            <TaskButton link={`https://${task.channel_link}`} channelName={task.channel_username}/>
                         </div>
                     </div>
                 ))}
