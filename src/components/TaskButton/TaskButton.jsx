@@ -50,7 +50,7 @@ const TaskButton = ({link, channelName}) => {
     };
 
     return (
-        <div>
+        <div className={'task-btn'}>
             <button
                 className={'task-btn'}
                 onClick={handleClick}
