@@ -25,7 +25,7 @@ const TaskButton = ({link, channelName}) => {
                 },
                 body: JSON.stringify({
                     user_id: `${user?.id}`,
-                    channel_name: `${channelName}`
+                    channel_username: `${channelName}`
                 }),
             })
                 .then(response => {
