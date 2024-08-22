@@ -29,7 +29,7 @@ const TaskButton = ({link, channelName}) => {
                 }),
             })
                 .then(response => {
-                    if (response.body.status === true) {
+                    if (response.body.result === true) {
                         setStatus('disabled'); // Успешный ответ, кнопка становится неактивной
                     } else {
                         setStatus('initial'); // Ошибка, возвращаемся в первоначальное состояние
