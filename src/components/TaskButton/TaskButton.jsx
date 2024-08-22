@@ -28,8 +28,9 @@ const TaskButton = ({link, channelName}) => {
                     channel_username: `${channelName}`
                 }),
             })
-                .then(response => {
-                    if (response.body.result === true) {
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === true) {
                         setStatus('disabled'); // Успешный ответ, кнопка становится неактивной
                     } else {
                         setStatus('initial'); // Ошибка, возвращаемся в первоначальное состояние
