@@ -24,7 +24,7 @@
     margin-right: 15px;
 }
 
-.task-details {
+.task-details * {
     background-color: #f9f9f9;
 }
 
