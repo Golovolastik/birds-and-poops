@@ -5,7 +5,7 @@ import {useTelegram} from "../../hooks/useTelegram";
 const TaskButton = ({link, channelName}) => {
     const [status, setStatus] = useState('initial'); // 'initial', 'check', 'disabled'
     const [showPopup, setShowPopup] = useState(false);
-    const user = useTelegram();
+    const {user} = useTelegram();
     const handleClick = () => {
         if (status === 'initial') {
             // Используем Telegram.WebApp.openLink для перехода по ссылке без подтверждения
